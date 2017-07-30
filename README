@@ -1,0 +1,25 @@
+脚本使用说明：
+
+download_full_Oracle_repo.sh
+  功能：
+  从oracle官方将public yum中的所有repo下载到本地的/MyRepo/repo_from_oracle/ol7中;
+  用法：  
+	./download_full_Oracle7_repo.sh > /MyRepo/logs/yum_repo/oel/oracle_pub_repo_`date +%F` 2>&1
+
+update_Oracle_repo.sh
+  功能：
+  每个季度第一个月的1日0时0分 更新yum库。
+  用法：--
+	参见period_updt.sh	
+
+period_updt.sh
+  功能：crontab用到的脚本。为防止某些字符不被crontab识别进而导致计划进程失败，故将内容写入到该脚本，然后被调用。
+  用法：
+  crontab -e
+  ##添加如下内容：
+  0 0 1 */3 * /MyRepo/bin/oel/period_updt.sh
+
+
+
+
+
