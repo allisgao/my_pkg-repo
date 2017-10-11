@@ -1,4 +1,4 @@
-脚本使用说明：
+# 脚本使用说明：
 
 download_full_Oracle_repo.sh
   功能：
@@ -16,8 +16,10 @@ period_updt.sh
   功能：crontab用到的脚本。为防止某些字符不被crontab识别进而导致计划进程失败，故将内容写入到该脚本，然后被调用。
   用法：
   crontab -e
+  ~~~bash
   ##添加如下内容：
   0 0 1 */3 * /MyRepo/bin/oel/period_updt.sh
+  ~~~
 
 
 
